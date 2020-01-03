@@ -31,14 +31,14 @@ void Game::game()
     {
         for (size_t j = 0; j < 6; j++)
         {
-            if(P[XY(i,j)].isClick(20)&&!win&&P[XY(i,j)].state==0)
+            if(P[XY(i,j)].isClick(20)&&!win)
             {
-                if(a)
-                    P[XY(i,j)].SetState(1);
-                else
-                    P[XY(i,j)].SetState(2);
-                a=!a;
-
+                uint16_t h = setLowest(i,6);
+                if(h!=13)
+                {
+                    if(P[XY(i,h)].SetState(a))
+                        a=!a;
+                }
             }
             if(checkHorizontal(i,j))
             {
@@ -103,4 +103,13 @@ bool Game::checkRightDown(uint16_t i ,uint16_t j)
     if(P[XY(i,j)].state==P[XY(i+1,j-1)].state&&P[XY(i,j)].state==P[XY(i+2,j-2)].state&&P[XY(i,j)].state==P[XY(i+3,j-3)].state&&P[XY(i,j)].state!=0)
         return true;
     return false;
+}
+uint16_t Game::setLowest(uint16_t i,uint16_t j)
+{
+    if(j<0)
+        return 13;
+    if(P[XY(i,j)].state==0)
+        return j;
+    else 
+        return setLowest(i,j-1);
 }

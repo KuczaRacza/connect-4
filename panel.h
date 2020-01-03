@@ -14,6 +14,7 @@ class Button
     bool isHover();
     void draw(SDL_Renderer * re);
     uint32_t t;
+    bool butonup;
     
 
 };

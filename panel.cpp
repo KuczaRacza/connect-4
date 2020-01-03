@@ -20,13 +20,14 @@ bool Button::isClick(uint32_t time)
 {
     t+=global->deltaTime;
     if(SDL_GetMouseState(NULL,NULL) & SDL_BUTTON(SDL_BUTTON_LEFT)) 
-        if(isHover()&&t>time)
+        if(isHover()&&t>time&&butonup)
         {
-             
-            return true;
+            butonup=false;
             t=0;
+            return true;
+           
         }
-            
+    butonup=true;  
     return false;
 }
 void Button::draw(SDL_Renderer * ren)
