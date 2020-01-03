@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/4-in-row.exe.dir/main.cpp.o CMakeFiles/4-in-row.exe.dir/game.cpp.o CMakeFiles/4-in-row.exe.dir/panel.cpp.o CMakeFiles/4-in-row.exe.dir/global.cpp.o  -o 4-in-row.exe -lSDL2 -lSDL2_image -lSDL2_ttf 

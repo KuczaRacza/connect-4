@@ -1,0 +1,3 @@
+/home/serwer39/program/connect-4/build/CMakeFiles/rebuild_cache.dir
+/home/serwer39/program/connect-4/build/CMakeFiles/4-in-row.exe.dir
+/home/serwer39/program/connect-4/build/CMakeFiles/edit_cache.dir

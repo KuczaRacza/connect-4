@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/connect-4.exe.dir/main.cpp.o  -o connect-4.exe -lSDL2 -lSDL2_image -lSDL2_ttf 
