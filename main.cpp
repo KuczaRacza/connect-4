@@ -1,4 +1,7 @@
 #include"game.h"
+#include <cstdio>
+#include<iostream>
+#define DEBUG true
 GlobalInfo global;
 int main(int argc, char *argv[]) {
     SDL_Window *win=NULL;
@@ -25,8 +28,15 @@ int main(int argc, char *argv[]) {
         SDL_SetRenderDrawColor(renderer,90,150,140,SDL_ALPHA_OPAQUE);
         SDL_RenderClear(renderer);
         global.setDeltaTime();
+        global.lastClick+=global.deltaTime;
+        if(DEBUG)
+        {
+            
+            std::cout<<"frameTime "<<global.deltaTime<<" | Debug"<<'\n';
+        }
         g.game();
         SDL_RenderPresent(renderer);
+        SDL_Delay(global.getSyncTime());
         
     }
 

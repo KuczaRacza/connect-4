@@ -6,3 +6,10 @@ uint32_t GlobalInfo::setDeltaTime()
         deltaTime=r;
         return r;
 }
+uint32_t GlobalInfo::getSyncTime()
+{     
+        uint32_t r = SDL_GetTicks()-lastSyncTime;
+        lastSyncTime =SDL_GetTicks();
+        syncTime=r;
+        return 16-r;
+}

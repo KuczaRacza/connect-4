@@ -31,13 +31,23 @@ void Game::game()
     {
         for (size_t j = 0; j < 6; j++)
         {
-            if(P[XY(i,j)].isClick(20)&&!win)
+            if(P[XY(i,j)].isClick(400))
             {
-                uint16_t h = setLowest(i,6);
+                uint16_t h = setLowest(i);
                 if(h!=13)
                 {
-                    if(P[XY(i,h)].SetState(a))
-                        a=!a;
+                    if(a)
+                    {
+                         if(P[XY(i,h)].SetState(1))
+                            a!=a;
+                    }
+                    else
+                    {
+                        if(P[XY(i,h)].SetState(1))
+                        a!=a;
+                    }
+                       
+                    
                 }
             }
             if(checkHorizontal(i,j))
@@ -78,38 +88,39 @@ void Game::game()
 }
 bool Game::checkHorizontal(uint16_t i, uint16_t j)
 {
-     if(i<5)
+     if(i<4)
         if(P[XY(i,j)].state==P[XY(i+1,j)].state&&P[XY(i+1,j)].state==P[XY(i+2,j)].state&&P[XY(i+2,j)].state==P[XY(i+3,j)].state&&P[XY(i,j)].state!=0)
             return true;
     return false;
 }
 bool Game::checkVertical(uint16_t i ,uint16_t j)
 {
-    if(j<4)
+    if(j<3)
         if(P[XY(i,j)].state==P[XY(i,j+1)].state&&P[XY(i,j+1)].state==P[XY(i,j+2)].state&&P[XY(i,j+2)].state==P[XY(i,j+3)].state&&P[XY(i,j)].state!=0)
             return true;
     return false;
 }
 bool Game::checkRightUp(uint16_t i ,uint16_t j)
 {
-    if(i<5&&j<4)
+    if(i<4&&j<3)
     if(P[XY(i,j)].state==P[XY(i+1,j+1)].state&&P[XY(i+1,j+1)].state==P[XY(i+2,j+2)].state&&P[XY(i+2,j+2)].state==P[XY(i+3,j+3)].state&&P[XY(i,j)].state!=0)
         return true;
     return false;
 }
 bool Game::checkRightDown(uint16_t i ,uint16_t j)
 {
-    if(j>4&&i<5)
+    if(j>3&&i<4)
     if(P[XY(i,j)].state==P[XY(i+1,j-1)].state&&P[XY(i,j)].state==P[XY(i+2,j-2)].state&&P[XY(i,j)].state==P[XY(i+3,j-3)].state&&P[XY(i,j)].state!=0)
         return true;
     return false;
 }
-uint16_t Game::setLowest(uint16_t i,uint16_t j)
+uint16_t Game::setLowest(uint16_t x)
 {
-    if(j<0)
-        return 13;
-    if(P[XY(i,j)].state==0)
-        return j;
-    else 
-        return setLowest(i,j-1);
+   for (size_t i = 5; i >= 0; i--)
+   {
+       if(P[XY(x,i)].state==0)
+           return i;
+   }
+   return 13;
+   
 }

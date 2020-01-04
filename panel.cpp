@@ -18,16 +18,15 @@ bool Button::isHover()
 }
 bool Button::isClick(uint32_t time)
 {
-    t+=global->deltaTime;
+    
     if(SDL_GetMouseState(NULL,NULL) & SDL_BUTTON(SDL_BUTTON_LEFT)) 
-        if(isHover()&&t>time&&butonup)
+        if(isHover()&&global->lastClick>time)
         {
-            butonup=false;
-            t=0;
+            global->lastClick=0;
             return true;
-           
+
         }
-    butonup=true;  
+    
     return false;
 }
 void Button::draw(SDL_Renderer * ren)

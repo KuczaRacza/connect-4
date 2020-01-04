@@ -13,8 +13,8 @@ class Button
     bool isClick(uint32_t time);
     bool isHover();
     void draw(SDL_Renderer * re);
-    uint32_t t;
-    bool butonup;
+ 
+  
     
 
 };
