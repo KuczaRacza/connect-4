@@ -7,7 +7,7 @@ class Game
     GlobalInfo * global;
     Panel *P;
     void test();
-    bool a=false;;
+    bool a=false;
     bool win=false;
     SDL_Rect win_pos;
     void game();
@@ -16,5 +16,7 @@ class Game
     bool checkRightUp(uint16_t i ,uint16_t j);
     bool checkRightDown(uint16_t i ,uint16_t j);
     static uint16_t XY(uint16_t x,uint16_t y);
+    void restart();
+    Button reset;
     uint16_t setLowest(uint16_t x);
 };
