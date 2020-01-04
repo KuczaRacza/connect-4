@@ -31,7 +31,7 @@ void Game::game()
     {
         for (size_t j = 0; j < 6; j++)
         {
-            if(P[XY(i,j)].isClick(400))
+            if(P[XY(i,j)].isClick(80))
             {
                 uint16_t h = setLowest(i);
                 if(h!=13)
@@ -39,12 +39,12 @@ void Game::game()
                     if(a)
                     {
                          if(P[XY(i,h)].SetState(1))
-                            a!=a;
+                            a=!a;
                     }
                     else
                     {
                         if(P[XY(i,h)].SetState(1))
-                        a!=a;
+                        a=!a;
                     }
                        
                     
@@ -67,7 +67,7 @@ void Game::game()
             }
             else if(checkRightUp(i,j))
             {
-                win=true;;
+                win=true;
                 win_pos={i,j,i+3,j+3};
             }
             P[XY(i,j)]._draw(ren);

@@ -19,7 +19,7 @@ bool Button::isHover()
 bool Button::isClick(uint32_t time)
 {
     
-    if(SDL_GetMouseState(NULL,NULL) & SDL_BUTTON(SDL_BUTTON_LEFT)) 
+    if(global->getMouseLeft) 
         if(isHover()&&global->lastClick>time)
         {
             global->lastClick=0;

@@ -1,6 +1,6 @@
-
+#define DEBUG true
 #include<SDL2/SDL.h>
-
+#include<iostream>
 class GlobalInfo
 {
     public:
@@ -11,5 +11,9 @@ class GlobalInfo
     uint32_t syncTime;
     uint32_t getSyncTime();
     uint32_t lastSyncTime;
+    SDL_Event e;
+    bool up;
+    bool mouseButtonUp();
+    bool getMouseLeft;
 
 };

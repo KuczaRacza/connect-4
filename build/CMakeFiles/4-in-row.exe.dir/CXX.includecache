@@ -21,6 +21,8 @@ global.h
 /home/serwer39/program/connect-4/global.h
 SDL2/SDL.h
 -
+iostream
+-
 
 /home/serwer39/program/connect-4/main.cpp
 game.h
