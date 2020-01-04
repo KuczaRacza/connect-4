@@ -1,6 +1,4 @@
 #include"game.h"
-#include <cstdio>
-#include<iostream>
 
 GlobalInfo global;
 int main(int argc, char *argv[]) {

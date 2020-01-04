@@ -14,7 +14,7 @@ Game::Game(SDL_Renderer *r,GlobalInfo * g)
         }
         
     }
-    Button reset({50,50,100,100},global);
+    reset= Button({25,350,50,50},global);
     reset.color={255,255,20,255};
    
 }
