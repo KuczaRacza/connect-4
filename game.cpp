@@ -3,10 +3,10 @@ Game::Game(SDL_Renderer *r,GlobalInfo * g)
 {   
     global=g;
     ren=r; 
-    P = new Panel[80];
-    for (size_t i = 0; i < 8; i++)
+    P = new Panel[42];
+    for (size_t i = 0; i < 7; i++)
     {
-        for (size_t j = 0; j < 7; j++)
+        for (size_t j = 0; j < 6; j++)
         {
             SDL_Rect r = {150+(i*100),100+(j*100),100,100};
             P[XY(i,j)]=Panel(r,global,i,j);
@@ -24,13 +24,13 @@ void Game::test()
 }
 uint16_t Game::XY(uint16_t x,uint16_t y)
 {
-    return (x+(8*y));
+    return (x+(7*y));
 }
 void Game::game()
 {
-    for (size_t i = 0; i < 8; i++)
+    for (size_t i = 0; i < 7; i++)
     {
-        for (size_t j = 0; j < 7; j++)
+        for (size_t j = 0; j < 6; j++)
         {
             if(P[XY(i,j)].isClick(80)&&!win)
             {
@@ -124,9 +124,9 @@ bool Game::checkRightDown(uint16_t i ,uint16_t j)
 }
 uint16_t Game::setLowest(uint16_t x)
 {
-   for (int i = 6; i >= 0; i--)
+   for (int i = 5; i >= 0; i--)
    {
-       if(i>0&&i<7)
+       if(i>=0&&i<6)
        if(P[XY(x,i)].state==0)
            return i;
    }
