@@ -61,21 +61,38 @@ void Game::game()
             {
                 win=true;
                 win_pos={i,j,i+3,j};
+                for (size_t k = 0; k < 4; k++)
+                {
+                    P[XY(i+k,j)].color={10,250,25,255};
+                }
+                
             }
             else if(checkVertical(i,j))
             {
                 win=true;
                 win_pos={i,j,i,j+3};
+                for (size_t k = 0; k < 4; k++)
+                {
+                    P[XY(i,j+k)].color={10,250,25,255};
+                }
             }
             else if(checkRightDown(i,j))
             {
                 win=true;
                 win_pos={i,j,i+3,j-3};
+                for (size_t k = 0; k < 4; k++)
+                {
+                    P[XY(i+k,j-k)].color={10,250,25,255};
+                }
             }
             else if(checkRightUp(i,j))
             {
                 win=true;
                 win_pos={i,j,i+3,j+3};
+                for (size_t k = 0; k < 4; k++)
+                {
+                    P[XY(i+k,j+k)].color={10,250,25,255};
+                }
             }
             P[XY(i,j)]._draw(ren);
            
@@ -132,4 +149,13 @@ uint16_t Game::setLowest(uint16_t x)
    }
    return 13;
    
+}
+void Game::restart()
+{
+    for (size_t i = 0; i < 42; i++)
+    {
+        P[i].state=0;
+        P[i].color={200,200,200,255}
+    }
+    
 }
