@@ -54,12 +54,16 @@ bool Panel::SetState(uint16_t _s)
 }
 void Panel::_draw(SDL_Renderer *r)
 {
-    draw(r);
+    
     if(state==1)
         SDL_SetRenderDrawColor(r,255,10,10,255);
     else if(state==2)
         SDL_SetRenderDrawColor(r,10,10,255,255);
-    SDL_Rect d={pos.x+5,pos.y+5,pos.w-10,pos.h-10};
-    SDL_RenderFillRect(r,&d);
+    if(state!=0)
+    {
+        SDL_Rect d={pos.x+5,pos.y+5,pos.w-10,pos.h-10};
+        SDL_RenderFillRect(r,&d);
+    }
+   
 
 }

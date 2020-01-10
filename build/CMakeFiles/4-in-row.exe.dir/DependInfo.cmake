@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/serwer39/program/connect-4/animation.cpp" "/home/serwer39/program/connect-4/build/CMakeFiles/4-in-row.exe.dir/animation.cpp.o"
   "/home/serwer39/program/connect-4/game.cpp" "/home/serwer39/program/connect-4/build/CMakeFiles/4-in-row.exe.dir/game.cpp.o"
   "/home/serwer39/program/connect-4/global.cpp" "/home/serwer39/program/connect-4/build/CMakeFiles/4-in-row.exe.dir/global.cpp.o"
   "/home/serwer39/program/connect-4/main.cpp" "/home/serwer39/program/connect-4/build/CMakeFiles/4-in-row.exe.dir/main.cpp.o"

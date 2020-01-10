@@ -1,6 +1,7 @@
 #include"game.h"
-Game::Game(SDL_Renderer *r,GlobalInfo * g)
+Game::Game(SDL_Renderer *r,GlobalInfo * g):Animation(r,g)
 {   
+    
     global=g;
     ren=r; 
     P = new Panel[42];
@@ -16,20 +17,20 @@ Game::Game(SDL_Renderer *r,GlobalInfo * g)
     }
     reset= Button({25,350,50,50},global);
     reset.color={255,255,20,255};
-   
 }
-void Game::test()
-{
 
-}
-uint16_t Game::XY(uint16_t x,uint16_t y)
-{
-    return (x+(7*y));
-}
+
 void Game::game()
-{
-    for (size_t i = 0; i < 7; i++)
+{   
+    uint8_t ho= 13;
+    if(reset.isClick(20))
     {
+        restart();
+    }
+    
+    for (size_t i = 0; i < 7; i++)
+    {   
+        
         for (size_t j = 0; j < 6; j++)
         {
             if(P[XY(i,j)].isClick(80)&&!win)
@@ -94,13 +95,23 @@ void Game::game()
                     P[XY(i+k,j+k)].color={10,250,25,255};
                 }
             }
-            P[XY(i,j)]._draw(ren);
+            if(P[XY(i,j)].isHover()) ho = i;
            
         }
+     
         
     }
+    
     reset.draw(ren);
-    if(win)
+   
+
+    if(ho!=13)hoverAnimation();
+    if(a)c={230,0,0,255};
+    else c={0,0,230,255};
+    renderTilesBackground(P);
+    verticalHower({150+(100*ho),100,100,600});
+    renderTilesForeground(P);
+     if(win)
     {
         int x1= win_pos.x*100 +200;
         int x2= win_pos.w*100 +200;
@@ -109,6 +120,9 @@ void Game::game()
         SDL_SetRenderDrawColor(ren,10,10,10,255);
         SDL_RenderDrawLine(ren,x1,y1,x2,y2);
     }
+
+    update();
+
     
 }
 bool Game::checkHorizontal(uint16_t i, uint16_t j)
@@ -155,7 +169,8 @@ void Game::restart()
     for (size_t i = 0; i < 42; i++)
     {
         P[i].state=0;
-        P[i].color={200,200,200,255}
+        P[i].color={200,200,200,255};
     }
+    win=false;
     
 }

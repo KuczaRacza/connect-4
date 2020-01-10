@@ -6,13 +6,21 @@
 
 #IncludeRegexTransform: 
 
+/home/serwer39/program/connect-4/animation.cpp
+animation.h
+/home/serwer39/program/connect-4/animation.h
+
+/home/serwer39/program/connect-4/animation.h
+panel.h
+/home/serwer39/program/connect-4/panel.h
+
 /home/serwer39/program/connect-4/game.cpp
 game.h
 /home/serwer39/program/connect-4/game.h
 
 /home/serwer39/program/connect-4/game.h
-panel.h
-/home/serwer39/program/connect-4/panel.h
+animation.h
+/home/serwer39/program/connect-4/animation.h
 
 /home/serwer39/program/connect-4/global.cpp
 global.h
@@ -27,10 +35,6 @@ iostream
 /home/serwer39/program/connect-4/main.cpp
 game.h
 /home/serwer39/program/connect-4/game.h
-cstdio
--
-iostream
--
 
 /home/serwer39/program/connect-4/panel.cpp
 panel.h

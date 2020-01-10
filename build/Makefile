@@ -123,6 +123,33 @@ depend:
 	$(MAKE) -f CMakeFiles/4-in-row.exe.dir/build.make CMakeFiles/4-in-row.exe.dir/build
 .PHONY : 4-in-row.exe/fast
 
+animation.o: animation.cpp.o
+
+.PHONY : animation.o
+
+# target to build an object file
+animation.cpp.o:
+	$(MAKE) -f CMakeFiles/4-in-row.exe.dir/build.make CMakeFiles/4-in-row.exe.dir/animation.cpp.o
+.PHONY : animation.cpp.o
+
+animation.i: animation.cpp.i
+
+.PHONY : animation.i
+
+# target to preprocess a source file
+animation.cpp.i:
+	$(MAKE) -f CMakeFiles/4-in-row.exe.dir/build.make CMakeFiles/4-in-row.exe.dir/animation.cpp.i
+.PHONY : animation.cpp.i
+
+animation.s: animation.cpp.s
+
+.PHONY : animation.s
+
+# target to generate assembly for a file
+animation.cpp.s:
+	$(MAKE) -f CMakeFiles/4-in-row.exe.dir/build.make CMakeFiles/4-in-row.exe.dir/animation.cpp.s
+.PHONY : animation.cpp.s
+
 game.o: game.cpp.o
 
 .PHONY : game.o
@@ -240,6 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... 4-in-row.exe"
 	@echo "... edit_cache"
+	@echo "... animation.o"
+	@echo "... animation.i"
+	@echo "... animation.s"
 	@echo "... game.o"
 	@echo "... game.i"
 	@echo "... game.s"

@@ -10,7 +10,7 @@ class Button
     Button();
     SDL_Rect pos;
     GlobalInfo *global;
-    bool isClick(uint32_t time);
+     bool isClick(uint32_t time);
     bool isHover();
     void draw(SDL_Renderer * re);
  

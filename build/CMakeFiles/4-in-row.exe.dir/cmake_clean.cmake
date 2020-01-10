@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/4-in-row.exe.dir/game.cpp.o"
   "CMakeFiles/4-in-row.exe.dir/panel.cpp.o"
   "CMakeFiles/4-in-row.exe.dir/global.cpp.o"
+  "CMakeFiles/4-in-row.exe.dir/animation.cpp.o"
   "4-in-row.exe.pdb"
   "4-in-row.exe"
 )
