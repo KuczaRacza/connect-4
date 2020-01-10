@@ -20,9 +20,30 @@ void Animation::verticalHower(SDL_Rect position)
     _r=position;
     
 }
+void Animation::hoverAnimationGradient(SDL_Rect position)
+{
+     if(_r.x!=position.x)hovertime=0;
+    float tMax = 250;
+    if(hovertime<0)hovertime=1;
+    if(hovertime>tMax)hovertime=tMax;
+    float per = hovertime / tMax;
+    SDL_Rect k=position;
+    k.y=ceil(position.y+(position.h*(1-per))) ;  
+    k.h=700-k.y  ;
+    //k.h=ceil(position.h-(position.h*(1-per)));    
+    float gradient = 200;
+    for (size_t i = k.y; i < k.y+k.h; i++)
+    {
+        gradient-=gradient/600;
+        SDL_SetRenderDrawColor(win,c.r,c.g,c.b,205-gradient);
+        SDL_RenderDrawLine(win,k.x,i,k.x+k.w,i);
+    }                   
+    _r=position;
+}
 void Animation::update()
 {
     hovertime-=global->deltaTime/2;
+    
     
 }
 void Animation::hoverAnimation()

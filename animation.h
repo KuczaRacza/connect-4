@@ -1,4 +1,5 @@
 #include"panel.h"
+#include<math.h>
 class Animation
 {
     public:
@@ -11,6 +12,7 @@ class Animation
     SDL_Rect _r;
     void update();
     void hoverAnimation();
+    void hoverAnimationGradient(SDL_Rect position);
     void renderTilesForeground(Panel *p);
     void renderTilesBackground(Panel *p);
     static uint16_t XY(uint16_t i,uint16_t j);

@@ -13,6 +13,8 @@ animation.h
 /home/serwer39/program/connect-4/animation.h
 panel.h
 /home/serwer39/program/connect-4/panel.h
+math.h
+-
 
 /home/serwer39/program/connect-4/game.cpp
 game.h

@@ -109,7 +109,7 @@ void Game::game()
     if(a)c={230,0,0,255};
     else c={0,0,230,255};
     renderTilesBackground(P);
-    verticalHower({150+(100*ho),100,100,600});
+    hoverAnimationGradient({150+(100*ho),100,100,600});
     renderTilesForeground(P);
      if(win)
     {
