@@ -111,6 +111,7 @@ void Game::game()
     renderTilesBackground(P);
     hoverAnimationGradient({150+(100*ho),100,100,600});
     renderTilesForeground(P);
+    renderTexts();
      if(win)
     {
         int x1= win_pos.x*100 +200;

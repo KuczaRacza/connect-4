@@ -1,4 +1,4 @@
-#define DEBUG false
+#define DEBUG true
 #include<SDL2/SDL.h>
 #include<iostream>
 class GlobalInfo

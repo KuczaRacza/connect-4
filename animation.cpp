@@ -4,6 +4,10 @@ Animation::Animation(SDL_Renderer *w,GlobalInfo * g)
     global=g;
     win=w;
     _r={0,0,0,0};
+    FontFile=TTF_OpenFont(font,26);
+    #if DEBUG
+        std::cout<<"loaded font \n";
+    #endif
 }
 void Animation::verticalHower(SDL_Rect position)
 {   
@@ -81,4 +85,25 @@ void Animation::renderTilesForeground(Panel * p)
 uint16_t Animation::XY(uint16_t x,uint16_t y)
 {
     return (x+(7*y));
+}
+void Animation::makeText(SDL_Rect _pos, SDL_Color _color,std::string message)
+{
+    SDL_Surface * sText= NULL;
+    if(FontFile!=NULL && !message.empty())
+    {
+        sText=TTF_RenderText_Solid(FontFile,message.c_str(),_color);
+    }
+    if( sText != NULL )
+    {
+        SDL_Texture * tText = SDL_CreateTextureFromSurface(win,sText);
+        SDL_RenderCopy(win,tText,NULL,&_pos);
+        SDL_DestroyTexture(tText);
+    }
+    
+    SDL_FreeSurface(sText);
+   
+}
+void Animation::renderTexts()
+{
+    makeText({5,280,5*18,5*15},{0,0,0,255},"reset");
 }
